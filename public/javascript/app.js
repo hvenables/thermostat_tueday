@@ -1,4 +1,5 @@
 var thermostat = new Thermostat;
+// var efficency;
 
 var showTemp = function() {
   var colourefficent = thermostat.efficency();
@@ -7,6 +8,7 @@ var showTemp = function() {
     color: colourefficent,
   });
 };
+
 
 $(document).ready(function() {
   showTemp();
@@ -32,24 +34,9 @@ $(document).ready(function() {
       }
     }
   });
-
-  $('#reset').click(function() {
-    thermostat.resetTemp();
-    showTemp();
-  });
-
-  var urlCity = window.location.search.replace('?city=', '').replace('&Submit=Submit', '') || 'london';
-  var weathertemp;
-  var weathername;
-
-  $.ajax('http://api.openweathermap.org/data/2.5/find?q=' + urlCity + '&units=metric', {
-    success: function(data) {
-      weathertemp = Math.floor(data.list[0].main.temp) + '°C  ';
-      weathername = data.list[0].name;
-      var lati = data.list[0].coord.lat;
-      var long = data.list[0].coord.lon;
-      $('#weather').html(weathertemp + weathername);
-    },
-  });
-
 });
+
+// window.document.getElementById('up').addEventListener('click', function() {
+//   thermostat.upTemp;
+//   thermostat.temperature;
+// });

@@ -13,8 +13,7 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
   </head>
   <body>
-    <div class="container">
-      <button onclick="getLocation()">Try It</button>
+    <div id='therm' class="container">
       <p id='demo'></p>
       <div id='weather'></div>
       <form input='text' method='get'>
@@ -32,9 +31,12 @@
           <input id="myCheckbox" type="checkbox" checked="red">
       </div>
     </div>
+    <div id="map"></div>
   </body>
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="app/src/Thermostat.js"></script>
     <script src="app/src/location.js"></script>
     <script src="app/public/javascript/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSsh7DRy4BsQ1OWx6ZhJWfOkpnlXV04IM&signed_in=true&callback=getLocation"
+        async defer></script>
 </html>

@@ -12,8 +12,6 @@
       }
       #map {
         height: 100%;
-        width: 50%;
-        float: right;
       }
 #floating-panel {
   position: absolute;
@@ -48,47 +46,16 @@
     </style>
   </head>
   <body>
-    <!-- <div id="floating-panel">
+    <div id="floating-panel">
       <input id="latlng" type="text" value="40.714224,-73.961452">
       <input id="submit" type="button" value="Reverse Geocode">
-    </div> -->
+    </div>
     <div id="map"></div>
-    <!-- <script>
-function initMap() {
-  var myLatLng = {lat: -25.363, lng: 131.044};
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
-  });
-
-  new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-  });
-};
-
-    </script> -->
-    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="app/src/Thermostat.js"></script>
-    <script src="app/src/location.js"></script>
-    <script src="app/public/javascript/app.js"></script>
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSsh7DRy4BsQ1OWx6ZhJWfOkpnlXV04IM&signed_in=true&callback=initMap"
-        async defer></script>
-  </body>
-</html>
-
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSsh7DRy4BsQ1OWx6ZhJWfOkpnlXV04IM&signed_in=true&callback=initMap"
-    async defer></script> -->
-
-<!--
+    <script>
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: {lat: 10.731, lng: -0.997}
+    zoom: 8,
+    center: {lat: 40.731, lng: -73.997}
   });
   var geocoder = new google.maps.Geocoder;
   var infowindow = new google.maps.InfoWindow;
@@ -119,4 +86,10 @@ function geocodeLatLng(geocoder, map, infowindow) {
       window.alert('Geocoder failed due to: ' + status);
     }
   });
-} -->
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSsh7DRy4BsQ1OWx6ZhJWfOkpnlXV04IM&signed_in=true&callback=initMap"
+        async defer></script>
+  </body>
+</html>

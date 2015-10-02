@@ -1,3 +1,5 @@
+var latt;
+var long;
 var currentPosition;
 
 function getLocation() {
@@ -9,31 +11,18 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  currentPosition = position;
-  // console.log(currentPosition);
+  latt = position.coords.latitude;
+  long = position.coords.longitude;
+  initMap(latt, long);
 }
 
-console.log('before');
-getLocation();
-console.log(currentPosition);
-console.log('after');
-
-var currentLat = currentPosition.coords.latitude;
-var currentLong = currentPosition.coords.longitude;
-
-console.log(currentLat);
-console.log(currentLong);
-
-function initMap() {
-  var myLatLng = {lat: currentLat, lng: currentLong};
-
+function initMap(latt, long) {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
+    zoom: 12,
+    center: {lat: latt, lng: long},
   });
-
-  new google.maps.Marker({
-    position: myLatLng,
+  var marker = new google.maps.Marker({
+    position: {lat: latt, lng: long},
     map: map,
   });
-};
+}
